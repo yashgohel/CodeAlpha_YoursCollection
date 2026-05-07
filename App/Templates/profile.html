@@ -1,0 +1,44 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'profile.css' %}" />
+    <title>Your's Collection</title>
+  </head>
+  <body>
+    <nav class="header">
+      <div class="logo">
+        <div class="logo-icon">
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M6 9C6 12.3137 8.68629 15 12 15C15.3137 15 18 12.3137 18 9"
+              stroke="rgba(205, 181, 153)"
+              stroke-width="3"
+              stroke-linecap="round"
+            />
+          </svg>
+        </div>
+      </div>
+      <ul class="nav-links">
+        <li><a>USER'S PROFILE</a></li>
+        <li><a href="{% url 'home' %}">HOME</a></li>
+      </ul>
+    </nav>
+    <div class="login-container">
+      <form class="form" action="#" method="post">
+        {% csrf_token %}
+        <h2 class="profile_heading">WELCOME {{user.fname.capitalize}}!</h2>
+        <p class="profile_content">Name: {{ user.fname }} {{ user.lname }}</p>
+        <p class="profile_content">Email: {{ user.email }}</p>
+      </form>
+    </div>
+  </body>
+</html>

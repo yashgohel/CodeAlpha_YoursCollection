@@ -6,11 +6,13 @@
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
 }
+
 body {
   background:
     linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url("images/background.jpg") center/cover fixed no-repeat;
 }
+
 .header {
   position: absolute;
   top: 32px;
@@ -26,6 +28,7 @@ body {
   box-shadow: 6px 8px 12px rgba(0, 0, 0, 0.36);
   margin-bottom: 5rem;
 }
+
 .logo-icon {
   background-color: rgba(102, 76, 35);
   width: 32px;
@@ -81,6 +84,7 @@ body {
   padding: 2rem 4rem;
   width: 100%;
 }
+
 .hero-section {
   display: flex;
   align-items: center;
@@ -101,6 +105,7 @@ body {
   letter-spacing: -0.02em;
   color: #d2bead;
 }
+
 .hero-text .collection_heading {
   font-size: 4rem;
   font-weight: 900;
@@ -292,7 +297,6 @@ body {
 /* Tablet Screens (768px and below) */
 @media (max-width: 768px) {
   .header {
-    position: fixed;
     top: 16px;
     left: 16px;
     right: 16px;
@@ -316,14 +320,10 @@ body {
   }
 
   .hero-section {
-    flex-direction: column;
     margin-bottom: 2rem;
   }
 
-  .hero-text {
-    padding-right: 0;
-    text-align: center;
-  }
+
 
   .hero-text .home_heading {
     font-size: 2.5rem;

@@ -1,50 +1,38 @@
 {% load static %}
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{% static 'sign.css' %}" />
-    <title>Your's Collection</title>
-  </head>
-  <body>
-    <nav class="header">
-      <div class="logo">
-        <div class="logo-icon">
-          <svg
-            width="18"
-            height="18"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M6 9C6 12.3137 8.68629 15 12 15C15.3137 15 18 12.3137 18 9"
-              stroke="rgba(205, 181, 153)"
-              stroke-width="3"
-              stroke-linecap="round"
-            />
-          </svg>
-        </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="{% static 'sign.css' %}" />
+  <title>Your's Collection</title>
+</head>
+
+<body>
+  <nav class="header">
+    <div class="logo">
+      <div class="logo-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6 9C6 12.3137 8.68629 15 12 15C15.3137 15 18 12.3137 18 9" stroke="rgba(205, 181, 153)"
+            stroke-width="3" stroke-linecap="round" />
+        </svg>
       </div>
-      <ul class="nav-links">
-        <li><a>BACK TO CUTOMER SIGN IN PAGE?</a></li>
-        <li><a href="{% url 'signin' %}">SIGN IN</a></li>
-      </ul>
-    </nav>
-    <div class="login-container">
-      <form class="form" action="#" method="post">
-        {% csrf_token %}
-        <h2>LOG IN AS ADMIN</h2>
-        <input type="email" name="email" placeholder="Email" required />
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          required
-        />
-        <button type="submit">LOG IN</button>
-      </form>
     </div>
-  </body>
+    <ul class="nav-links">
+      <li><a>BACK TO CUTOMER SIGN IN PAGE?</a></li>
+      <li><a href="{% url 'signin' %}">SIGN IN</a></li>
+    </ul>
+  </nav>
+  <div class="login-container">
+    <form class="form" action="#" method="post">
+      {% csrf_token %}
+      <h2>LOG IN AS ADMIN</h2>
+      <input type="email" name="email" placeholder="Email" required />
+      <input type="password" name="password" placeholder="Password" required />
+      <button type="submit">LOG IN</button>
+    </form>
+  </div>
+</body>
+
 </html>

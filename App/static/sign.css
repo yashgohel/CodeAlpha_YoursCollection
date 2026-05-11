@@ -8,7 +8,6 @@
 }
 
 .header {
-  position: fixed;
   top: 32px;
   left: 133px;
   width: 82.8%;
@@ -22,6 +21,7 @@
   box-shadow: 6px 8px 12px rgba(0, 0, 0, 0.36);
   margin-bottom: 5rem;
 }
+
 .logo-icon {
   background-color: rgba(102, 76, 35);
   width: 32px;
@@ -79,6 +79,7 @@
   padding: 40px;
   width: 300px;
 }
+
 .form h2 {
   margin-bottom: 10px;
   color: rgba(102, 77, 33);
@@ -86,6 +87,7 @@
   font-weight: 600;
   text-align: center;
 }
+
 .form input {
   width: 100%;
   padding: 12px;
@@ -97,11 +99,13 @@
   border: 1px solid transparent;
   border-radius: 5px;
 }
+
 .form input::placeholder {
   color: rgba(203, 183, 153);
   font-size: 14px;
   letter-spacing: 1px;
 }
+
 .form input:focus {
   outline: none;
 }
@@ -116,6 +120,7 @@
   margin: 10px 0px;
   transition: background-color 0.3s ease;
 }
+
 .form button:hover {
   cursor: pointer;
   background-color: rgba(203, 183, 153);
@@ -129,6 +134,7 @@
   letter-spacing: 2px;
   font-weight: 600;
 }
+
 .profile_content {
   color: rgba(102, 77, 33);
   letter-spacing: 1px;
@@ -139,7 +145,6 @@
 /* Tablet Screens (768px and below) */
 @media (max-width: 768px) {
   .header {
-    position: fixed;
     top: 16px;
     left: 16px;
     right: 16px;

@@ -30,8 +30,8 @@ To get a local copy up and running, follow these simple steps.
 
 1.  **Clone the repo**
     ```sh
-    git clone https://github.com/your_username/Yours-Collection.git
-    cd Yours-Collection
+    git clone https://github.com/yashgohel/CodeAlpha_YoursCollection
+    cd CodeAlpha_YoursCollection
     ```
 
 2.  **Create and activate a virtual environment**

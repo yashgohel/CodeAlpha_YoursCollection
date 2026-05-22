@@ -7,7 +7,7 @@ __pycache__/
 *.log
 db.sqlite3
 /media/
-SECRET_KEY
+SECRET_KEY = "django-insecure-ge9h^*v+fy#-i=b4t0m+a8vkp@ba2gf!$unwfl%9%)pj$oqjj+"
 
 # Virtualenv
 venv/

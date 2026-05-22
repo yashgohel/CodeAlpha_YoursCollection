@@ -189,7 +189,6 @@ input[type="file"]::file-selector-button {
 input[type="file"]::file-selector-button:hover {
   background-color: #d2bead4b;
   color: #332316;
-
 }
 
 .form .add,
@@ -397,8 +396,6 @@ input[type="file"]::file-selector-button:hover {
   .hero-section {
     margin-bottom: 2rem;
   }
-
-
 
   .hero-text .home_heading {
     font-size: 2.5rem;

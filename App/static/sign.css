@@ -6,8 +6,14 @@
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
 }
+body {
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("images/background.jpg") center/cover fixed no-repeat;
+}
 
 .header {
+  position: absolute;
   top: 32px;
   left: 133px;
   width: 82.8%;
@@ -47,6 +53,17 @@
 
 .nav-links a {
   text-decoration: none;
+  color: #4a3320;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #8b5a2b;
+}
+
+.nav-links a {
+  text-decoration: none;
   color: #6a4b31;
   font-weight: 700;
   font-size: 0.95rem;
@@ -66,9 +83,6 @@
   padding-top: 100px;
   justify-content: center;
   height: 100vh;
-  background:
-    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url("images/background.jpg") center/cover no-repeat;
 }
 
 .form {

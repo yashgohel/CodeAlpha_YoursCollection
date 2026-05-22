@@ -104,7 +104,6 @@ body {
   text-transform: uppercase;
 }
 
-
 .profile_heading {
   margin-bottom: 25px;
   color: rgba(102, 77, 33);
@@ -211,7 +210,6 @@ body {
   }
 
   .form {
-
     padding: 25px;
   }
 
@@ -232,12 +230,9 @@ body {
     z-index: 1000;
   }
 
-
-
   .nav-links a {
     font-size: 0.8rem;
   }
-
 
   .form {
     width: 90%;
@@ -330,5 +325,4 @@ body {
   .footer-links a {
     font-size: 0.8rem;
   }
-
 }

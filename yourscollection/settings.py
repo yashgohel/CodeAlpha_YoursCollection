@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 
 from pathlib import Path
+import os
+from urllib.parse import urlparse, parse_qs
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,9 +25,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-ge9h^*v+fy#-i=b4t0m+a8vkp@ba2gf!$unwfl%9%)pj$oqjj+"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['yours-collection.vercel.app']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -73,12 +75,44 @@ WSGI_APPLICATION = "yourscollection.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
+# Default: SQLite (local development)
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
         "NAME": BASE_DIR / "db.sqlite3",
     }
 }
+
+# If a DATABASE_URL environment variable is provided (e.g. from Neon), parse
+# it and override the default DATABASES setting so Django uses Postgres.
+DATABASE_URL = os.getenv("DATABASE_URL")
+if DATABASE_URL:
+    url = urlparse(DATABASE_URL)
+    # url.path is like '/dbname'
+    db_name = url.path[1:]
+    db_user = url.username
+    db_password = url.password
+    db_host = url.hostname
+    db_port = url.port
+
+    # Parse query params (e.g. sslmode)
+    query = parse_qs(url.query)
+    options = {}
+    if query.get("sslmode"):
+        options["sslmode"] = query.get("sslmode")[-1]
+
+    DATABASES["default"] = {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": db_name,
+        "USER": db_user,
+        "PASSWORD": db_password,
+        "HOST": db_host,
+        "PORT": db_port or "",
+        "CONN_MAX_AGE": 600,
+    }
+
+    if options:
+        DATABASES["default"]["OPTIONS"] = options
 
 
 # Password validation
@@ -116,6 +150,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = "static/"
+STATIC_ROOT = BASE_DIR / "staticfiles"
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
 

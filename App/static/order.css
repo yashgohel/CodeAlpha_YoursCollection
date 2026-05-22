@@ -140,7 +140,6 @@ body {
   max-width: 100%;
   height: auto;
   border-radius: 15px;
-
 }
 
 a {
@@ -161,7 +160,6 @@ a {
   width: 100%;
   border: 1px solid #332316;
   text-transform: uppercase;
-
 }
 
 .view-account:hover {
@@ -261,7 +259,6 @@ footer {
   }
 
   .form {
-
     padding: 25px;
   }
 

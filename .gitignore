@@ -7,6 +7,7 @@ __pycache__/
 *.log
 db.sqlite3
 /media/
+SECRET_KEY
 
 # Virtualenv
 venv/

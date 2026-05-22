@@ -32,7 +32,7 @@ SECRET_KEY = "django-insecure-ge9h^*v+fy#-i=b4t0m+a8vkp@ba2gf!$unwfl%9%)pj$oqjj+
 DEBUG = os.getenv("DEBUG", "False") == "True"
 
 ALLOWED_HOSTS = os.getenv(
-    "ALLOWED_HOSTS", "yours-collection.vercel.app,localhost,127.0.0.1"
+    "ALLOWED_HOSTS", ".vercel.app,yours-collection.vercel.app,127.0.0.1,localhost,"
 ).split(",")
 
 

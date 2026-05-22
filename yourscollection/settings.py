@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 
 from pathlib import Path
 import os
-from urllib.parse import urlparse, parse_qs
+import dj_database_url
 from dotenv import load_dotenv
 
 # Load environment variables from .env file
@@ -79,44 +79,14 @@ WSGI_APPLICATION = "yourscollection.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
-# Default: SQLite (local development)
-DATABASES = {
-    "default": {
+DATABASES = {"default": dj_database_url.config(default=os.environ.get("DATABASE_URL"))}
+
+# If DATABASE_URL is not set, use SQLite for local development
+if not os.environ.get("DATABASE_URL"):
+    DATABASES["default"] = {
         "ENGINE": "django.db.backends.sqlite3",
         "NAME": BASE_DIR / "db.sqlite3",
     }
-}
-
-# If a DATABASE_URL environment variable is provided (e.g. from Neon), parse
-# it and override the default DATABASES setting so Django uses Postgres.
-DATABASE_URL = os.getenv("DATABASE_URL")
-if DATABASE_URL:
-    url = urlparse(DATABASE_URL)
-    # url.path is like '/dbname'
-    db_name = url.path[1:]
-    db_user = url.username
-    db_password = url.password
-    db_host = url.hostname
-    db_port = url.port
-
-    # Parse query params (e.g. sslmode)
-    query = parse_qs(url.query)
-    options = {}
-    if query.get("sslmode"):
-        options["sslmode"] = query.get("sslmode")[-1]
-
-    DATABASES["default"] = {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": db_name,
-        "USER": db_user,
-        "PASSWORD": db_password,
-        "HOST": db_host,
-        "PORT": db_port or "",
-        "CONN_MAX_AGE": 600,
-    }
-
-    if options:
-        DATABASES["default"]["OPTIONS"] = options
 
 
 # Password validation

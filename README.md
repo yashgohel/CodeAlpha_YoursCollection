@@ -65,7 +65,7 @@ To get a local copy up and running, follow these simple steps.
     ```sh
     python manage.py runserver
     ```
-    The application will be available at `http://127.0.0.1:8000`.
+    The application will be available at `yours-collection.vercel.app`.
 
 ## How to Use the Website
 

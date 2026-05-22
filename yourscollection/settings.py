@@ -46,6 +46,9 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "App",
+    "cloudinary_storage",
+    "django.contrib.staticfiles",
+    "cloudinary",
 ]
 
 MIDDLEWARE = [
@@ -135,3 +138,12 @@ MEDIA_ROOT = BASE_DIR / "media"
 # Authentication Redirects
 LOGOUT_REDIRECT_URL = "/"
 LOGIN_REDIRECT_URL = "/"
+
+CLOUDINARY_STORAGE = {
+    "CLOUD_NAME": os.getenv("CLOUDINARY_CLOUD_NAME", "your_default_cloud_name"),
+    "API_KEY": os.getenv("CLOUDINARY_API_KEY", "your_default_api_key"),
+    "API_SECRET": os.getenv("CLOUDINARY_API_SECRET", "your_default_api_secret"),
+}
+
+# Tell Django to use Cloudinary for uploaded media files
+DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"

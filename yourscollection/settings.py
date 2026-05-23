@@ -47,7 +47,6 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "App",
     "cloudinary_storage",
-    "django.contrib.staticfiles",
     "cloudinary",
 ]
 
@@ -144,9 +143,6 @@ CLOUDINARY_STORAGE = {
     "API_SECRET": os.getenv("CLOUDINARY_API_SECRET", "your_default_api_secret"),
 }
 
-# Prefer Django 4.2+ STORAGES setting. If CLOUDINARY_URL (or individual
-# Cloudinary env vars) are present, use Cloudinary for media. Otherwise fall
-# back to the filesystem for local development.
 CLOUDINARY_URL = os.getenv("CLOUDINARY_URL", "")
 
 if CLOUDINARY_URL or (

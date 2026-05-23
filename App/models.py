@@ -21,7 +21,7 @@ class AdminUser(models.Model):
 
 
 class Product(models.Model):
-    image = models.ImageField()
+    image = models.ImageField(upload_to="products/")
     product_name = models.CharField(max_length=100)
     quantity = models.IntegerField(default=1)
     description = models.TextField()

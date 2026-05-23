@@ -43,11 +43,12 @@ def adminpage(request):
         product_name = request.POST.get("product_name")
         description = request.POST.get("description")
         price = request.POST.get("price")
-        data = Product.objects.create(
+
+        Product.objects.create(
             image=image, product_name=product_name, description=description, price=price
         )
-        data.save()
         return redirect(adminpage)
+
     products = Product.objects.all()
     return render(request, "adminpage.html", {"products": products})
 

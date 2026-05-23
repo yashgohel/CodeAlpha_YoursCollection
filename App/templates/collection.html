@@ -47,134 +47,21 @@
       </section>
       <!-- Product-Cards  -->
       <section class="products-section" id="products">
+        {% for product in products %}
         <div class="product-card">
           <div class="product-image-box">
             <img
-              src="{% static 'images/sweater.png' %}"
-              alt="Cashmere Blend Knit"
+              src="{{ product.image.url }}"
+              alt="{{ product.product_name }}"
             />
           </div>
-          <h3>CASHMERE BLEND KNIT</h3>
-          <p class="price">$175.</p>
-          <button class="btn-secondary">ADD TO CART</button>
+          <h3>{{ product.product_name }}</h3>
+          <p class="price">${{ product.price }}</p>
+          <a href="{% url 'add_cart' product.id %}">
+            <button class="btn-secondary">ADD TO CART</button>
+          </a>
         </div>
-        <div class="product-card">
-          <div class="product-image-box">
-            <img
-              src="{% static 'images/perfume.png' %}"
-              alt="Veridian Perfume"
-            />
-          </div>
-          <h3>VERIDIAN PERFUME</h3>
-          <p class="price">$95.</p>
-          <button class="btn-secondary">ADD TO CART</button>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image-box">
-            <img
-              src="{% static 'images/sunglasses.png' %}"
-              alt="Oasis Sunglasses"
-            />
-          </div>
-          <h3>OASIS SUNGLASSES</h3>
-          <p class="price">$120.</p>
-          <button class="btn-secondary">ADD TO CART</button>
-        </div>
-        <div class="product-card">
-          <div class="product-image-box">
-            <img src="{% static 'images/mug.png' %}" alt="Ceramic Mug" />
-          </div>
-          <h3>CERAMIC MUG</h3>
-          <p class="price">$35.</p>
-          <button class="btn-secondary">ADD TO CART</button>
-        </div>
-        <div class="product-card">
-          <div class="product-image-box">
-            <img
-              src="{% static 'images/wallet.png' %}"
-              alt="Classic Leather Wallet"
-            />
-          </div>
-          <h3>CLASSIC LEATHER WALLET</h3>
-          <p class="price">$85.</p>
-          <button class="btn-secondary">ADD TO CART</button>
-        </div>
-        <div class="product-card">
-          <div class="product-image-box">
-            <img
-              src="{% static 'images/candle.png' %}"
-              alt="Midnight Scented Candle"
-            />
-          </div>
-          <h3>MIDNIGHT SCENTED CANDLE</h3>
-          <p class="price">$45.</p>
-          <button class="btn-secondary">ADD TO CART</button>
-        </div>
-        <div class="product-card">
-          <div class="product-image-box">
-            <img
-              src="{% static 'images/backpack.png' %}"
-              alt="Leather Backpack"
-            />
-          </div>
-          <h3>LEATHER BACKPACK</h3>
-          <p class="price">$150.</p>
-          <button class="btn-secondary">ADD TO CART</button>
-        </div>
-        <div class="product-card">
-          <div class="product-image-box">
-            <img
-              src="{% static 'images/keyboard.png' %}"
-              alt="Mechanical Keyboard"
-            />
-          </div>
-          <h3>MECHANICAL KEYBOARD</h3>
-          <p class="price">$120.</p>
-          <button class="btn-secondary">ADD TO CART</button>
-        </div>
-        <div class="product-card">
-          <div class="product-image-box">
-            <img src="{% static 'images/lamp.png' %}" alt="Modern Desk Lamp" />
-          </div>
-          <h3>MODERN DESK LAMP</h3>
-          <p class="price">$65.</p>
-          <button class="btn-secondary">ADD TO CART</button>
-        </div>
-        <div class="product-card">
-          <div class="product-image-box">
-            <img
-              src="{% static 'images/coffee.png' %}"
-              alt="Artisan Coffee Beans"
-            />
-          </div>
-          <h3>ARTISAN COFFEE BEANS</h3>
-          <p class="price">$25.</p>
-          <button class="btn-secondary">ADD TO CART</button>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image-box">
-            <img
-              src="{% static 'images/yogamat.png' %}"
-              alt="Premium Yoga Mat"
-            />
-          </div>
-          <h3>PREMIUM YOGA MAT</h3>
-          <p class="price">$55.</p>
-          <button class="btn-secondary">ADD TO CART</button>
-        </div>
-        <div class="product-card">
-          <div class="product-image-box">
-            <img
-              src="{% static 'images/organizer.png' %}"
-              alt="Wooden Desk Organizer"
-            />
-          </div>
-          <h3>WOODEN DESK ORGANIZER</h3>
-          <p class="price">$45.</p>
-          <button class="btn-secondary">ADD TO CART</button>
-        </div>
+        {% endfor %}
       </section>
     </main>
 

@@ -120,7 +120,11 @@ def remove_cart(request, product_id):
 
 
 def collection(request):
-    return render(request, "collection.html")
+    if "user_id" not in request.session:
+        return redirect("signin")
+    user = get_object_or_404(User, id=request.session["user_id"])
+    products = Product.objects.all()
+    return render(request, "collection.html", {"products": products, "user": user})
 
 
 def cart(request):

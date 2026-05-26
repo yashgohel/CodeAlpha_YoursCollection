@@ -1,6 +1,6 @@
-# Yours-Collection
+# Your's Collection
 
-Yours-Collection is a full-featured e-commerce web application built with Django. It serves as an online storefront, allowing administrators to manage products and users to browse, purchase, and manage their orders.
+Your's Collection is a full-featured e-commerce web application built with Django. It serves as an online storefront, allowing administrators to manage products and users to browse, purchase, and manage their orders.
 
 ## About The Project
 
@@ -65,7 +65,7 @@ To get a local copy up and running, follow these simple steps.
     ```sh
     python manage.py runserver
     ```
-    The application will be available at `http://127.0.0.1:8000/`.
+Now, open your browser and navigate to http://127.0.0.1:8000/ to explore Your's Collection!
 
 ## How to Use the Website
 
